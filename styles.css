@@ -1,0 +1,756 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: #4338CA;
+    color: white;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.hamburger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 5px;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 52px;
+    right: -100%;
+    width: 250px;
+    height: calc(100vh - 52px);
+    background-color: #4338CA;
+    transition: right 0.3s ease;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+}
+
+.mobile-menu.active {
+    right: 0;
+}
+
+.mobile-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    transition: background-color 0.3s;
+}
+
+.mobile-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.hero {
+    background-color: #4338CA;
+    padding: 40px 0;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #FFFFFF;
+    color: black;
+    padding: 20px 35px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    margin-top: 30px;
+}
+
+.search-container {
+    position: relative;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 14px;
+    outline: none;
+}
+
+.search-container input::placeholder {
+    color: #999;
+}
+
+.about {
+    padding: 40px 0;
+}
+
+.about h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 20px;
+    color: #333;
+}
+
+.about-content {
+    background-color: #4338CA;
+    border-radius: 15px;
+    padding: 30px;
+    color: white;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.about-content img {
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.about-text p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.services {
+    padding: 40px 0;
+}
+
+.services h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 20px;
+    color: #333;
+}
+
+.service-grid {
+    background-color: #4338CA;
+    border-radius: 15px;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.service-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+.service-icon img {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    color: #4169E1;
+}
+
+.service-item h3 {
+    margin-top: 25px;
+    font-size: 16px;
+}
+
+.news {
+    padding: 40px 0;
+}
+
+.news h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 20px;
+    color: #333;
+}
+
+.news-grid {
+    background-color: #4338CA;
+    border-radius: 15px;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.news-item {
+    background-color: #D3D3D3;
+    border-radius: 10px;
+    height: 200px;
+}
+
+.facility-cards {
+    padding: 20px 0 40px;
+}
+
+.facility-card {
+    background-color: #4338CA;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 20px;
+    color: white;
+    display: flex;
+    gap: 20px;
+}
+
+.facility-card.reverse {
+    flex-direction: row-reverse;
+}
+
+.facility-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.facility-content h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.facility-content p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.visi-section {
+    background-color: #4338CA;
+    color: white;
+    padding: 40px 20px;
+    margin: 20px;
+    border-radius: 15px;
+}
+
+.visi-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.visi-section p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.misi-section h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.misi-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.misi-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.misi-icon {
+    background-color: white;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    color: #4169E1;
+}
+
+.misi-item p {
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.media-banner {
+    background-color: #D3D3D3;
+    height: 300px;
+    margin: 20px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 24px;
+}
+
+.instagram-section {
+    margin: 20px;
+    background-color: #4338CA;
+    padding: 30px;
+    border-radius: 15px;
+    color: white;
+}
+
+.instagram-section h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.instagram-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: white;
+    text-decoration: none;
+}
+.instagram-link img {
+    width: 60px;
+    height: 60px;
+}
+.instagram-link span {
+    font-size: 18px;
+}
+
+.search-section {
+    background-color: #4338CA;
+    padding: 30px;
+    margin: 20px;
+    border-radius: 15px;
+    color: white;
+}
+
+.search-section h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.book-section {
+    padding: 20px;
+}
+
+.book-section h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.book-category {
+    margin-bottom: 30px;
+}
+
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.category-header h4 {
+    font-size: 16px;
+    color: #333;
+}
+
+.category-header button {
+    background: none;
+    border: none;
+    color: #4169E1;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+.book-slider {
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.book-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.book-grid {
+    display: flex;
+    gap: 15px;
+    min-width: min-content;
+}
+
+.book-item {
+    min-width: 150px;
+    max-width: 150px;
+}
+
+.book-cover {
+    width: 100%;
+    height: 200px;
+    background-color: #D3D3D3;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 18px;
+}
+
+#book1 .book-cover {
+    background-image: url('../assets/WhatsApp Image 2026-02-13 at 8.50.34 PM.jpeg');
+    background-size: cover;
+    background-position: center;
+    color: transparent;
+}
+
+#book2 .book-cover {
+    background-image: url('../assets/WhatsApp Image 2026-02-13 at 8.50.41 PM.jpeg');
+    background-size: cover;
+    background-position: center;
+    color: transparent;
+}
+
+#book4 .book-cover {
+    background-image: url('../assets/WhatsApp Image 2026-02-13 at 8.50.42 PM.jpeg');
+    background-size: cover;
+    background-position: center;
+    color: transparent;
+}
+
+.book-cover button {
+    border: none;
+    background-color: #4338CA;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 105%;
+    color: white;
+    padding: 20px 10px;
+    border-radius: 0 0 10px 10px;
+    width: 100%;
+    color: white;
+    border: none;
+    z-index: 2;
+}
+
+.book-item button:hover {
+    background-color: #3558d1;
+}
+
+footer {
+    background-color: #2d2d2d;
+    color: white;
+    padding: 30px 0;
+    margin-top: 40px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.footer-info h3,
+.footer-menu h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.footer-info p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+.footer-menu ul {
+    list-style: none;
+}
+
+.footer-menu ul li {
+    margin-bottom: 10px;
+}
+
+.footer-menu ul li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.footer-menu ul li a:hover {
+    color: white;
+}
+
+@media (min-width: 768px) {
+    .logo {
+        font-size: 22px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .search-container input {
+        font-size: 16px;
+        padding: 18px 25px;
+    }
+
+    .about-content {
+        padding: 40px;
+    }
+
+    .about-content img {
+        width: 200px;
+        height: 250px;
+    }
+
+    .about-text p {
+        font-size: 16px;
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+        padding: 60px;
+    }
+
+    .service-icon {
+        width: 100px;
+        height: 100px;
+    }
+
+    .service-item h3 {
+        font-size: 18px;
+    }
+
+    .news-grid {
+        padding: 40px;
+        gap: 30px;
+    }
+
+    .news-item {
+        height: 300px;
+    }
+
+    .facility-card {
+        padding: 35px;
+        gap: 30px;
+    }
+
+    .facility-card img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .facility-content h3 {
+        font-size: 22px;
+    }
+
+    .facility-content p {
+        font-size: 16px;
+    }
+
+    .visi-section {
+        padding: 50px 40px;
+    }
+
+    .visi-section h2 {
+        font-size: 32px;
+    }
+
+    .visi-section p {
+        font-size: 16px;
+    }
+
+    .misi-section h2 {
+        font-size: 32px;
+    }
+
+    .misi-grid {
+        gap: 50px;
+    }
+
+    .misi-icon {
+        width: 100px;
+        height: 100px;
+    }
+
+    .misi-item p {
+        font-size: 15px;
+    }
+
+    .media-banner {
+        height: 400px;
+    }
+
+    .instagram-section {
+        padding: 40px;
+    }
+
+    .instagram-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .instagram-link span {
+        font-size: 20px;
+    }
+
+    .search-section {
+        padding: 40px;
+    }
+
+    .book-grid {
+        gap: 20px;
+    }
+
+    .book-item {
+        min-width: 180px;
+        max-width: 180px;
+    }
+
+    .book-cover {
+        height: 240px;
+    }
+
+    .footer-content {
+        gap: 50px;
+    }
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h2 {
+    font-size: 20px;
+    color: #4338CA;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 2px solid #4338CA;
+    padding-bottom: 10px;
+}
+
+.modal-content .book-info {
+    margin-bottom: 15px;
+}
+
+.modal-content .book-info label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.modal-content .book-info span {
+    display: block;
+    color: #666;
+}
+
+.modal-content .status-tersedia {
+    color: green;
+    font-weight: bold;
+}
+
+.modal-content .status-tidak-tersedia {
+    color: red;
+    font-weight: bold;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #999;
+    line-height: 1;
+}
+
+.modal-close:hover {
+    color: #333;
+}
