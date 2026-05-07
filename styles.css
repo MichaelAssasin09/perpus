@@ -18,6 +18,7 @@ body {
     padding: 0 20px;
 }
 
+
 header {
     background-color: #4338CA;
     color: white;
@@ -26,6 +27,7 @@ header {
     top: 0;
     z-index: 100;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+   
 }
 
 header .container {
@@ -115,12 +117,15 @@ header .container {
     display: inline-block;
     background-color: #FFFFFF;
     color: black;
-    padding: 20px 35px;
+    padding: 19px 35px;
     border-radius: 8px;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 17px;
     transition: background-color 0.3s;
     margin-top: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 18%;
+    text-align: center;
 }
 
 .search-container {
@@ -167,13 +172,20 @@ header .container {
     object-fit: cover;
     border-radius: 10px;
     flex-shrink: 0;
+    background-position: center;
 }
 
 .about-text p {
-    font-size: 14px;
-    line-height: 1.6;
+    line-height: 1.8; /* Jarak antar baris teks */
+            font-size: 2rem;
+            text-align: justify;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Jarak antar paragraf (PENGGANTI <br>) */
+            margin-bottom: 25px; 
 }
-
+.about-text p:last-child {
+            margin-bottom: 0;
+}
 .services {
     padding: 40px 0;
 }
@@ -232,16 +244,25 @@ header .container {
 .news-grid {
     background-color: #4338CA;
     border-radius: 15px;
-    padding: 30px;
+    padding: 40px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }
 
-.news-item {
-    background-color: #D3D3D3;
+#news1.news-item {
+    background-image: url('assets/Berita\ 1.jpeg');
+    background-size: cover;
+    background-position: center;
     border-radius: 10px;
-    height: 200px;
+    height: 300px;
+}
+#news2.news-item {
+    background-image: url('assets/Berita\ 2.jpeg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    height: 300px;
 }
 
 .facility-cards {
@@ -289,15 +310,18 @@ header .container {
 }
 
 .visi-section h2 {
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: 20px;
+   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .visi-section p {
-    font-size: 14px;
+    font-size: 17px;
     line-height: 1.6;
     margin-bottom: 30px;
     font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    
 }
 
 .misi-section h2 {
@@ -316,6 +340,7 @@ header .container {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 12px;
 }
 
 .misi-icon {
@@ -328,6 +353,7 @@ header .container {
     justify-content: center;
     margin-bottom: 15px;
     color: #4169E1;
+    
 }
 
 .misi-item p {
@@ -477,6 +503,44 @@ header .container {
     background-position: center;
     color: transparent;
 }
+#book7 .book-cover {
+    background-image: url('assets/Buku\ cover\ depan\ pplg.jpeg');
+    background-size: cover;
+    background-position: center;
+    color: transparent;
+}
+#book10 .book-cover {
+    background-image: url('assets/buku\ cover\ depan\ dkv.jpeg');
+    background-size: cover;
+    background-position: center;
+    color: transparent;
+}
+#book11 .book-cover {
+    background-image: url('assets/Buku\ cover\ depan\ bcf.jpeg');
+    background-size: cover;
+    background-position: center;
+    color: transparent;
+    
+}
+#book12 .book-cover {
+    background-image: url('assets/Buku\ cover\ depan\ sp.jpeg');
+    background-size: cover;
+    background-position: center;
+    color: transparent;
+}
+#book13 .book-cover {
+    background-image: url('assets/Buku\ cover\ depan\ ph.jpeg');
+    background-size: cover;
+    background-position: center;
+    color: transparent;
+}
+#book14 .book-cover {
+    background-image: url('assets/Buku\ cover\ depan\ kl.jpeg');
+    background-size: cover;
+    background-position: center;
+    color: transparent;
+}
+
 
 .book-cover button {
     border: none;
